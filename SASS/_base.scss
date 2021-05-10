@@ -18,7 +18,7 @@ $color-tertiary: #99E2D0;
   background-image: linear-gradient(to left, $color-primary, $color-secondary);
   border: 1px solid transparent;
   border-radius: 30px;
-  padding: 12px 15px;
+  padding: 12px 18px;
   color: #fff;
   font-weight: bold;
   box-shadow: 4px 4px 6px #aaa;
@@ -85,3 +85,4 @@ footer {
   @media (max-width: 650px) {
     padding: 1.5rem;
   }
+}

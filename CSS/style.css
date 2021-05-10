@@ -12,7 +12,7 @@ a {
   background-image: linear-gradient(to left, #9356DC, #FF79DA);
   border: 1px solid transparent;
   border-radius: 30px;
-  padding: 12px 15px;
+  padding: 12px 18px;
   color: #fff;
   font-weight: bold;
   box-shadow: 4px 4px 6px #aaa;
@@ -26,6 +26,57 @@ a {
 
 footer {
   background-color: #353535;
+}
+
+.Footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.Footer__icon-container {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 651px) {
+  .Footer__icon-container {
+    justify-content: center;
+  }
+}
+.Footer__icon {
+  margin: 0.5rem;
+  color: white;
+}
+.Footer__link {
+  color: white;
+}
+.Footer__link:hover {
+  text-decoration: underline;
+}
+.Footer__title {
+  color: white;
+  font-family: Shrikhand;
+}
+@media (max-width: 650px) {
+  .Footer__title {
+    margin: 0.5rem;
+  }
+}
+.Footer__text {
+  margin-bottom: 1.2rem;
+}
+@media (max-width: 650px) {
+  .Footer__text {
+    margin: 0.5rem;
+  }
+}
+@media (min-width: 651px) {
+  .Footer {
+    text-align: center;
+  }
+}
+@media (max-width: 650px) {
+  .Footer {
+    padding: 1.5rem;
+  }
 }
 
 .Logo {
@@ -169,8 +220,8 @@ footer {
   border: 5px solid #99E2D0;
   border-radius: 5px;
   position: absolute;
+  margin-top: 0.5rem;
   right: 2%;
-  top: 5%;
 }
 .Cards__footer {
   padding: 1rem;
@@ -211,55 +262,145 @@ footer {
   }
 }
 
-.Footer {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.Header {
+  display: grid;
+  align-items: center;
+  margin: auto;
+  text-align: center;
 }
-.Footer__icon-container {
+.Header__arrow {
+  position: absolute;
+  left: 1rem;
+  height: 2rem;
+  width: 1rem;
+  top: 6%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  font-size: 150%;
+}
+
+.Img__Card {
+  display: flex;
+  margin: auto;
+  max-height: 27rem;
+  width: 100%;
+  object-fit: cover;
 }
 @media (min-width: 651px) {
-  .Footer__icon-container {
-    justify-content: center;
+  .Img__Card {
+    max-width: 75%;
   }
 }
-.Footer__icon {
-  margin: 0.5rem;
-  color: white;
-}
-.Footer__link {
-  color: white;
-}
-.Footer__link:hover {
-  text-decoration: underline;
-}
-.Footer__title {
-  color: white;
-  font-family: Shrikhand;
-}
 @media (max-width: 650px) {
-  .Footer__title {
-    margin: 0.5rem;
+  .Img__Card {
+    max-width: 100%;
   }
 }
-.Footer__text {
-  margin-bottom: 1.2rem;
+
+.command__btn {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 12px 40px;
+  font-size: 0.8rem;
 }
-@media (max-width: 650px) {
-  .Footer__text {
-    margin: 0.5rem;
+
+.Menu {
+  margin: auto;
+  margin-top: -8rem;
+  border-radius: 2rem 2rem 0 0;
+  background-color: #f6f6f6;
+  position: relative;
+}
+.Menu__header {
+  padding: 1rem 2rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Menu__title {
+  font-family: "Shrikhand", "cursive";
+}
+.Menu__icon {
+  border: none;
+  background-color: inherit;
+  height: 2rem;
+  width: 2rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+.Menu__container {
+  display: grid;
+}
+@media (min-width: 951px) {
+  .Menu__container {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
   }
 }
 @media (min-width: 651px) {
-  .Footer {
-    text-align: center;
+  .Menu {
+    width: 75%;
   }
 }
 @media (max-width: 650px) {
-  .Footer {
-    padding: 1.5rem;
+  .Menu {
+    width: 100%;
   }
+}
+
+.Tray {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 1rem;
+}
+.Tray__title {
+  position: relative;
+  padding-bottom: 0.5rem;
+  color: #4d4d4d;
+}
+
+.MenuItem {
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 2px 2px 1px 1px #dddddd;
+  display: flex;
+  margin: 1rem 0;
+  overflow: hidden;
+  padding: 1rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.MenuItem__header {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1;
+}
+.MenuItem__title {
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.MenuItem__description {
+  color: #4d4d4d;
+  margin: 0;
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.MenuItem__price {
+  font-weight: bold;
+  display: flex;
+  align-self: flex-end;
 }
 
 /*# sourceMappingURL=style.css.map */
