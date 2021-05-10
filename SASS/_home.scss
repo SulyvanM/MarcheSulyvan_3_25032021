@@ -1,0 +1,251 @@
+.Logo {
+  display: flex;
+  text-align: center;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  max-width: 50%;
+}
+
+.Search {
+  background-color: rgb(243, 243, 243);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0px 5px 5px 0px #dddddd;
+
+  &__text {
+    border: none;
+    outline: none;
+    background-color: rgb(243, 243, 243);
+    font-size: 1rem;
+    padding: 20px 5px 20px 5px;
+    margin-top: 5px;
+    text-align: center;
+    width: 150px;
+  }
+}
+
+.reservation {
+  background: #f6f6f6;
+  text-align: center;
+  width: 100%;
+  padding: 40px 0;
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__text {
+    color: #4d4d4d;
+  }
+}
+
+.Operation {
+  margin-bottom: 50px;
+
+  &__title {
+    padding: 20px;
+
+    @media (min-width: 801px) {
+      text-align: center;
+    }
+  }
+
+  &__steps {
+    list-style-type: none;
+
+    & li {
+      box-shadow: 1px 2px 8px 2px #BCBCBC;
+      background-color: #F6F6F6;
+      display: flex;
+      margin: 10px 22px 18px 18px;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: nowrap;
+      padding: 25px;
+      border-radius: 25px;
+    }
+
+    & li p {
+      margin-left: 20px;
+    }
+
+    & li:hover {
+      background-color: #EFE3FF;
+    }
+
+    & li:hover .fas {
+      color: $color-primary;
+    }
+
+    @media (min-width: 801px) {
+      flex-wrap: wrap;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__number {
+    background-color: #9356DC;
+    color: white;
+    border-radius: 100%;
+    padding: 7px 10px;
+    margin-left: -39px;
+  }
+
+  &__icon {
+    color: grey;
+    margin-left: 25px;
+  }
+}
+
+.Restaurant {
+  background-color: #f6f6f6;
+  padding: 2rem 1rem;
+
+  &__title {
+    @media (min-width: 801px) {
+      text-align: center;
+    }
+  }
+
+  &__container {
+    display: flex;
+
+    @media (min-width: 801px) {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.Cards {
+
+  &__link {
+    border-radius: 20px;
+    position: relative;
+    background-color: white;
+    justify-content: space-between;
+    }
+
+  &__img {
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+    height: 100%;
+    max-height: 200px;
+  }
+
+  &__new {
+    color: darken($color-tertiary, 40%);
+    background: $color-tertiary;
+    border: 5px solid #99E2D0;
+    border-radius: 5px;
+    position: absolute;
+    right: 2%;
+    top: 5%;
+  }
+
+  &__footer {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__container {
+    flex: 1;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  &__subtitle {
+    margin: 0;
+  }
+
+  &__btn {
+    height: 2rem;
+    width: 2rem;
+    background-color: transparent;
+    border: transparent 0px solid;
+    padding: 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  @media (min-width: 801px) {
+    width: 45%;
+    margin: auto;
+  }
+
+  @media (max-width: 800px) {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2rem;
+  }
+}
+
+.Footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  &__icon-container {
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 651px) {
+      justify-content: center;
+    }
+  }
+
+  &__icon {
+    margin: 0.5rem;
+    color: white;
+  }
+
+  &__link {
+    color: white;
+  }
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+
+  &__title {
+    color: white;
+    font-family: Shrikhand;
+
+    @media (max-width: 650px) {
+      margin: 0.5rem;
+    }
+  }
+
+  &__text {
+    margin-bottom: 1.2rem;
+
+    @media (max-width: 650px) {
+      margin: 0.5rem;
+    }
+  }
+
+  @media (min-width: 651px) {
+    text-align: center;
+  }
+
+  @media (max-width: 650px) {
+    padding: 1.5rem;
+  }
+}
