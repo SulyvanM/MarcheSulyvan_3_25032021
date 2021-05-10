@@ -34,3 +34,54 @@ $color-tertiary: #99E2D0;
 footer {
   background-color: #353535;
 }
+
+.Footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  &__icon-container {
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 651px) {
+      justify-content: center;
+    }
+  }
+
+  &__icon {
+    margin: 0.5rem;
+    color: white;
+  }
+
+  &__link {
+    color: white;
+  }
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+
+  &__title {
+    color: white;
+    font-family: Shrikhand;
+
+    @media (max-width: 650px) {
+      margin: 0.5rem;
+    }
+  }
+
+  &__text {
+    margin-bottom: 1.2rem;
+
+    @media (max-width: 650px) {
+      margin: 0.5rem;
+    }
+  }
+
+  @media (min-width: 651px) {
+    text-align: center;
+  }
+
+  @media (max-width: 650px) {
+    padding: 1.5rem;
+  }
