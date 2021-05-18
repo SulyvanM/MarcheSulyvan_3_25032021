@@ -89,12 +89,18 @@
     }
   }
 
-  &__number {
-    background-color: #9356DC;
+  &--number {
+    counter-reset: count;
+  }
+
+  & li::before {
+    background-color: $color-primary;
     color: white;
     border-radius: 100%;
     padding: 7px 10px;
     margin-left: -39px;
+    counter-increment: count;
+    content: "" counter(count);
   }
 
   &__icon {
@@ -128,11 +134,17 @@
   }
 }
 
+
 .Cards {
+ position: relative;
+ height: 17rem;
+ background-color: white;
+ border-radius: 20px;
+ display: block;
+ box-shadow: 1px 2px 8px 2px #BCBCBC;
 
   &__link {
     border-radius: 20px;
-    position: relative;
     background-color: white;
     justify-content: space-between;
     }
@@ -156,6 +168,16 @@
     right: 2%;
   }
 
+  &--new::before {
+    content: "Nouveau";
+    position: absolute;
+    color: darken($color-tertiary, 40%);
+    background: $color-tertiary;
+    padding: .5em;
+    right: 3%;
+    top: 5%;
+  }
+
   &__footer {
     padding: 1rem;
     display: flex;
@@ -175,15 +197,43 @@
     margin: 0;
   }
 
+  &__icon {
+    background-color: #f6f6f6;
+    transition: 0.2s;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display:flex;
+    mix-blend-mode: lighten;
+  }
+
   &__btn {
     height: 2rem;
     width: 2rem;
-    background-color: transparent;
-    border: transparent 0px solid;
-    padding: 0;
     display:flex;
-    align-items:center;
-    justify-content:center;
+    position: relative;
+    background-color: black;
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &::before {
+      opacity: 0;
+      transition: 0.3s;
+      content: "";
+      height: 100%;
+      width: 100%;
+      background:linear-gradient(0deg, $color-primary 0%,$color-secondary 100%);
+    }
+  }
+
+  &__btn:hover {
+    .Cards__btn {
+      &--true {
+        opacity: 0;
+      }
+    }
   }
 
   @media (min-width: 801px) {

@@ -6,14 +6,14 @@
 
   &__arrow {
    position: absolute;
-   left: 1rem;
+   left: 12.5%;
    height: 2rem;
    width: 1rem;
    top: 6%;
    display:flex;
    align-items:center;
    justify-content:center;
-   font-size: 150%;
+   font-size: 175%;
   }
 }
 
@@ -99,8 +99,18 @@
 
   &__title {
     position: relative;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1em;
     color: #4d4d4d;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background: $color-tertiary;
+      bottom: 0;
+      left: 0;
+      right: 90%;
+      top: 2em;
+    }
   }
 }
 
@@ -115,6 +125,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  animation: MenuPop .6s;
+  animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+  animation-fill-mode: both;
 
   &__header {
     white-space: nowrap;
@@ -125,6 +138,7 @@
 
   &__title {
     margin: 0;
+    font-size : 90%;
     text-overflow: ellipsis;
     overflow: hidden;
   }
@@ -132,7 +146,7 @@
   &__description {
     color: #4d4d4d;
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 70%;
     text-overflow: ellipsis;
     overflow: hidden;
   }
@@ -143,4 +157,44 @@
     align-self: flex-end;
   }
 
+  &__validation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-tertiary;
+    margin: -1rem -5rem -1rem 1rem;
+    width: 4rem;
+    height: 4rem;
+    transition-duration: 0.6s;
+  }
+
+  &:hover &__validation {
+    margin-right: -1rem;
+  }
+
+  &__bloc {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    transform: rotate(90deg);
+    transition-duration: 0.6s;
+    justify-content: center;
+  }
+
+  &:hover &__bloc {
+    transform: rotate(0);
+  }
+
+  &__icon {
+    color: $color-tertiary;
+  }
+}
+
+@for $i from 0 to 10 {
+  .MenuPop--#{$i} {
+    animation-delay: #{$i/10}s;
+  }
 }

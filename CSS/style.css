@@ -163,12 +163,17 @@ footer {
     align-items: center;
   }
 }
-.Operation__number {
+.Operation--number {
+  counter-reset: count;
+}
+.Operation li::before {
   background-color: #9356DC;
   color: white;
   border-radius: 100%;
   padding: 7px 10px;
   margin-left: -39px;
+  counter-increment: count;
+  content: "" counter(count);
 }
 .Operation__icon {
   color: grey;
@@ -200,9 +205,16 @@ footer {
   }
 }
 
+.Cards {
+  position: relative;
+  height: 17rem;
+  background-color: white;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 1px 2px 8px 2px #BCBCBC;
+}
 .Cards__link {
   border-radius: 20px;
-  position: relative;
   background-color: white;
   justify-content: space-between;
 }
@@ -223,6 +235,15 @@ footer {
   margin-top: 0.5rem;
   right: 2%;
 }
+.Cards--new::before {
+  content: "Nouveau";
+  position: absolute;
+  color: #278870;
+  background: #99E2D0;
+  padding: 0.5em;
+  right: 3%;
+  top: 5%;
+}
 .Cards__footer {
   padding: 1rem;
   display: flex;
@@ -238,15 +259,35 @@ footer {
 .Cards__subtitle {
   margin: 0;
 }
+.Cards__icon {
+  background-color: #f6f6f6;
+  transition: 0.2s;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  mix-blend-mode: lighten;
+}
 .Cards__btn {
   height: 2rem;
   width: 2rem;
-  background-color: transparent;
-  border: transparent 0px solid;
-  padding: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  background-color: black;
+}
+.Cards__btn:hover::before {
+  opacity: 1;
+}
+.Cards__btn::before {
+  opacity: 0;
+  transition: 0.3s;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
+}
+.Cards__btn:hover .Cards__btn--true {
+  opacity: 0;
 }
 @media (min-width: 801px) {
   .Cards {
@@ -270,14 +311,14 @@ footer {
 }
 .Header__arrow {
   position: absolute;
-  left: 1rem;
+  left: 12.5%;
   height: 2rem;
   width: 1rem;
   top: 6%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 150%;
+  font-size: 175%;
 }
 
 .Img__Card {
@@ -363,8 +404,17 @@ footer {
 }
 .Tray__title {
   position: relative;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1em;
   color: #4d4d4d;
+}
+.Tray__title::after {
+  position: absolute;
+  content: "";
+  background: #99E2D0;
+  bottom: 0;
+  left: 0;
+  right: 90%;
+  top: 2em;
 }
 
 .MenuItem {
@@ -378,6 +428,9 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  animation: MenuPop 0.6s;
+  animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
+  animation-fill-mode: both;
 }
 .MenuItem__header {
   white-space: nowrap;
@@ -387,13 +440,14 @@ footer {
 }
 .MenuItem__title {
   margin: 0;
+  font-size: 90%;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 .MenuItem__description {
   color: #4d4d4d;
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 70%;
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -401,6 +455,85 @@ footer {
   font-weight: bold;
   display: flex;
   align-self: flex-end;
+}
+.MenuItem__validation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #99E2D0;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  height: 4rem;
+  transition-duration: 0.6s;
+}
+.MenuItem:hover .MenuItem__validation {
+  margin-right: -1rem;
+}
+.MenuItem__bloc {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 50px;
+  transform: rotate(90deg);
+  transition-duration: 0.6s;
+  justify-content: center;
+}
+.MenuItem:hover .MenuItem__bloc {
+  transform: rotate(0);
+}
+.MenuItem__icon {
+  color: #99E2D0;
+}
+
+.MenuPop--0 {
+  animation-delay: 0s;
+}
+
+.MenuPop--1 {
+  animation-delay: 0.1s;
+}
+
+.MenuPop--2 {
+  animation-delay: 0.2s;
+}
+
+.MenuPop--3 {
+  animation-delay: 0.3s;
+}
+
+.MenuPop--4 {
+  animation-delay: 0.4s;
+}
+
+.MenuPop--5 {
+  animation-delay: 0.5s;
+}
+
+.MenuPop--6 {
+  animation-delay: 0.6s;
+}
+
+.MenuPop--7 {
+  animation-delay: 0.7s;
+}
+
+.MenuPop--8 {
+  animation-delay: 0.8s;
+}
+
+.MenuPop--9 {
+  animation-delay: 0.9s;
+}
+
+@keyframes MenuPop {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
