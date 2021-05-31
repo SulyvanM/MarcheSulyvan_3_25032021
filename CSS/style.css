@@ -207,16 +207,11 @@ footer {
 .Restaurant {
   background-color: #f6f6f6;
   padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
 }
 @media (min-width: 801px) {
   .Restaurant__title {
     text-align: center;
   }
-}
-.Restaurant__container {
-  display: flex;
 }
 
 .Cards {
@@ -225,6 +220,7 @@ footer {
   width: 100%;
   column-gap: 2rem;
   row-gap: 2rem;
+  position: relative;
 }
 .Cards__link {
   box-shadow: 1px 2px 8px 2px #BCBCBC;
@@ -307,11 +303,7 @@ footer {
 .Cards__btn:hover .Cards__btn--true {
   opacity: 0;
 }
-@media (min-width: 801px) {
-  .Cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+
 .Header {
   display: flex;
 }
