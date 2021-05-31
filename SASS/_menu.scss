@@ -1,19 +1,26 @@
 .Header {
-  display: grid;
-  align-items: center;
-  margin: auto;
-  text-align: center;
+  display: flex;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    width: 70%;
+  }
 
   &__arrow {
-   position: absolute;
-   left: 12.5%;
-   height: 2rem;
-   width: 1rem;
-   top: 6%;
-   display:flex;
-   align-items:center;
-   justify-content:center;
-   font-size: 175%;
+    font-size: 175%;
+    display: flex;
+
+  }
+
+  &__logo {
+    display: flex;
+    margin: auto;
+    max-width: 60%;
   }
 }
 
@@ -62,16 +69,13 @@
   }
 
   &__icon {
-    border: none;
-    background-color: inherit;
-    height: 2rem;
-    width: 2rem;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
+    background-color: #f6f6f6;
+    transition: 0.2s;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display:flex;
+    mix-blend-mode: lighten;
   }
 
   &__container {
@@ -81,6 +85,7 @@
       grid-template-columns: repeat(3,1fr);
       column-gap: 1rem;
     }
+
   }
 
   @media (min-width: 651px) {
@@ -129,9 +134,11 @@
   animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
   animation-fill-mode: both;
 
-  &__header {
+  &:hover {
     white-space: nowrap;
-    text-overflow: ellipsis;
+  }
+
+  &__header {
     overflow: hidden;
     flex: 1;
   }
@@ -139,16 +146,16 @@
   &__title {
     margin: 0;
     font-size : 90%;
-    text-overflow: auto;
+    text-overflow: ellipsis;
     overflow: hidden;
   }
 
   &__description {
     color: #4d4d4d;
     margin: 0;
-    font-size: 70%;
     text-overflow: ellipsis;
     overflow: hidden;
+    font-size: 70%;
   }
 
   &__price {

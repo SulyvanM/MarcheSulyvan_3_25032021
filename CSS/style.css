@@ -80,6 +80,7 @@ footer {
 }
 
 .Loader {
+  margin-top: -2rem;
   width: 100%;
   height: 100%;
   background-color: white;
@@ -89,7 +90,7 @@ footer {
   animation: LoadSpin 10ms;
   animation-delay: 3000ms;
   animation-fill-mode: both;
-  z-index: 1;
+  z-index: 5;
 }
 
 .Spinn {
@@ -109,7 +110,7 @@ footer {
   margin: auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  max-width: 50%;
+  max-width: 40%;
 }
 
 .Search {
@@ -156,7 +157,6 @@ footer {
 }
 .Operation__steps li {
   height: 1rem;
-  width: 13rem;
   box-shadow: 1px 2px 8px 2px #BCBCBC;
   background-color: #F6F6F6;
   display: flex;
@@ -217,35 +217,33 @@ footer {
 }
 .Restaurant__container {
   display: flex;
-  max-width: 1280px;
-  margin: auto;
-  position: relative;
-}
-@media (min-width: 801px) {
-  .Restaurant__container {
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-  }
-}
-@media (max-width: 800px) {
-  .Restaurant__container {
-    flex-direction: column;
-  }
 }
 
 .Cards {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   column-gap: 2rem;
   row-gap: 2rem;
 }
 .Cards__link {
   box-shadow: 1px 2px 8px 2px #BCBCBC;
   background-color: white;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   display: block;
   position: relative;
+  justify-content: center;
+  margin: auto;
+}
+@media (min-width: 832px) {
+  .Cards__link {
+    width: 48%;
+  }
+}
+@media (max-width: 831px) {
+  .Cards__link {
+    width: 100%;
+  }
 }
 .Cards__img {
   object-fit: cover;
@@ -254,15 +252,6 @@ footer {
   border: transparent solid 0px;
   width: 100%;
   height: 10rem;
-}
-.Cards__new {
-  color: #278870;
-  background: #99E2D0;
-  border: 5px solid #99E2D0;
-  border-radius: 5px;
-  position: absolute;
-  margin-top: 0.5rem;
-  right: 2%;
 }
 .Cards--new::before {
   content: "Nouveau";
@@ -289,7 +278,7 @@ footer {
   margin: 0;
 }
 .Cards__icon {
-  background-color: #f6f6f6;
+  background-color: white;
   transition: 0.2s;
   position: absolute;
   height: 100%;
@@ -324,21 +313,25 @@ footer {
   }
 }
 .Header {
-  display: grid;
+  display: flex;
+}
+.Header__container {
+  display: flex;
   align-items: center;
   margin: auto;
   text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  width: 70%;
 }
 .Header__arrow {
-  position: absolute;
-  left: 12.5%;
-  height: 2rem;
-  width: 1rem;
-  top: 6%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 175%;
+  display: flex;
+}
+.Header__logo {
+  display: flex;
+  margin: auto;
+  max-width: 60%;
 }
 
 .Img__Card {
@@ -386,16 +379,13 @@ footer {
   font-family: "Shrikhand", "cursive";
 }
 .Menu__icon {
-  border: none;
-  background-color: inherit;
-  height: 2rem;
-  width: 2rem;
-  padding: 0;
+  background-color: #f6f6f6;
+  transition: 0.2s;
+  position: absolute;
+  height: 100%;
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: relative;
+  mix-blend-mode: lighten;
 }
 .Menu__container {
   display: grid;
@@ -452,24 +442,25 @@ footer {
   animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
   animation-fill-mode: both;
 }
-.MenuItem__header {
+.MenuItem:hover {
   white-space: nowrap;
-  text-overflow: ellipsis;
+}
+.MenuItem__header {
   overflow: hidden;
   flex: 1;
 }
 .MenuItem__title {
   margin: 0;
   font-size: 90%;
-  text-overflow: auto;
+  text-overflow: ellipsis;
   overflow: hidden;
 }
 .MenuItem__description {
   color: #4d4d4d;
   margin: 0;
-  font-size: 70%;
   text-overflow: ellipsis;
   overflow: hidden;
+  font-size: 70%;
 }
 .MenuItem__price {
   font-weight: bold;
