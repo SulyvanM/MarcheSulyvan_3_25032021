@@ -178,7 +178,7 @@ footer {
 .Operation__steps li:hover .fas {
   color: #9356DC;
 }
-@media (min-width: 801px) {
+@media (min-width: 580px) {
   .Operation__steps {
     flex-wrap: wrap;
     display: flex;
