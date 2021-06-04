@@ -53,6 +53,7 @@ footer {
 }
 .Footer__title {
   color: white;
+  font-size: 25px;
   font-family: Shrikhand;
 }
 @media (max-width: 650px) {
@@ -94,9 +95,9 @@ footer {
 }
 
 .Spinn {
-  width: 100px;
-  height: 100px;
-  border: 20px dashed #9356DC;
+  width: 90px;
+  height: 90px;
+  border: 17px dashed #9356DC;
   border-left-color: #FF79DA;
   border-bottom-color: black;
   border-right-color: #99E2D0;
